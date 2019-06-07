@@ -30,6 +30,7 @@ export default (Props) => {
       minHeight:'200px',
       verticalAlign:'top',
       borderRight:'solid 1px #afafaf',
+      fontSize: 16,
     },
     body: {
       fontSize: 18,
@@ -57,7 +58,7 @@ export default (Props) => {
             <StyledTableCell width='10%'>時間</StyledTableCell>
             <StyledTableCell width='70%'>
               <div>
-                <div>アイテム チェーン</div>
+                <div>チェーン</div>
                 <div><Meter maxJobTime={123456}/></div>
               </div>
             </StyledTableCell>
