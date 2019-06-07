@@ -4,14 +4,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hello: 'drag',
+      message: 'sample' + JSON.stringify(this),
+      count:0
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = () => {
+    let i = this.state.count;
+    i++;
+    this.setState({
+      message: "sample"+i,
+      count:i,
+    });
   }
 
   render() {
     return (
       <div>
-        hello<i className="fa fa-thumbs-up"></i>
+        <button onClick={this.handleClick}>おしてね<span className="fa fa-thumbs-up"/></button>
+        <div>{this.state.message}</div>
       </div>
     );
   }
