@@ -52,8 +52,10 @@
     "react-beautiful-dnd": "^11.0.3",
     "react-dev-utils": "^9.0.1",
     "react-dnd": "^7.4.5",
+    "react-dnd-html5-backend": "^7.5.0",
     "react-dom": "^16.8.6",
     "resolve": "1.10.0",
+    "ress": "^1.2.2",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
     "style-loader": "0.23.1",
@@ -134,5 +136,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "homepage":"."
 }

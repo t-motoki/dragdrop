@@ -29,10 +29,12 @@ export default (Props) => {
       color: theme.palette.common.black,
       minHeight:'200px',
       verticalAlign:'top',
+      borderRight:'solid 1px #afafaf',
     },
     body: {
       fontSize: 18,
       height:'70px',
+      borderRight:'solid 1px #afafaf',
     },
   }))(TableCell);
   
@@ -56,7 +58,7 @@ export default (Props) => {
             <StyledTableCell width='70%'>
               <div>
                 <div>アイテム チェーン</div>
-                <div><Meter maxJobTime={1235000}/></div>
+                <div><Meter maxJobTime={123456}/></div>
               </div>
             </StyledTableCell>
           </TableRow>

@@ -22,7 +22,7 @@ const grid = 8;
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
-  padding: grid * 2,
+  padding: grid,
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
@@ -35,14 +35,14 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightblue" : "lightgrey",
   padding: grid,
-  width: 250
+  width: 168
 });
 
 export default class ItemList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: getItems(10)
+      items: getItems(30)
     };
     this.onDragEnd = this.onDragEnd.bind(this);
   }

@@ -22,8 +22,9 @@ const grid = 8;
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: 'none',
-  padding: grid * 2,
-  margin: `0 ${grid}px 0 0`,
+  padding: grid,
+  margin: `0 0 0 0`,
+  border: `solid 1px #777`,
 
   // change background colour if dragging
   background: isDragging ? 'lightgreen' : 'grey',
@@ -35,7 +36,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : 'lightgrey',
   display: 'flex',
-  padding: grid,
+  padding: `${grid}px 0 ${grid}px`,
   overflow: 'auto',
 });
 
@@ -53,7 +54,6 @@ export default class ItemChain extends Component {
     if (!result.destination) {
       return;
     }
-
     const items = reorder(
       this.state.items,
       result.source.index,

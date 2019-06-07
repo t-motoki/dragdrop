@@ -15,6 +15,12 @@ class Main extends Component {
       startDate: moment(new Date()),
       finishDate: moment(new Date()).add(33,'h'),
       interval: 30,
+      ItemStatus:{
+        real:[{id:'', name:'',procTime:0,with:0}],
+        esti:[
+          [{name:'',procTime:0,with:0}]
+        ]
+      }
     };
 
     this.createData = this.createData.bind(this);
