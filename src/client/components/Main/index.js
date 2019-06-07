@@ -3,6 +3,8 @@ import moment from 'moment';
 
 import CustomizedTables from '../CustomizedTables';
 import MenuBar from '../MenuBar';
+import ItemList from '../ItemList';
+import ItemChain from '../ItemChain';
 
 import './style.scss';
 
@@ -30,21 +32,22 @@ class Main extends Component {
     // let TimeLine = [];
 
     const rows1 = [
-      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.finishDate.format('kk:mm'), ''),
+      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.finishDate.format('kk:mm'), <ItemChain/>),
     ];
 
     const rows2 = [
-      this.createData(this.state.startDate.format('YYYY/MM/DD '), this.state.startDate.format('kk:mm'), ''),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), ''),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), ''),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), ''),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), ''),
+      this.createData(this.state.startDate.format('YYYY/MM/DD '), this.state.startDate.format('kk:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
     ];
   
     return (
       <div className='main'>
         <MenuBar />
         <div className='joblist'>
+          <ItemList />
         </div>
         <div className='chainList'>
           <div>■実際のチェーン</div>
