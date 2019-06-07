@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 import CustomizedTables from '../CustomizedTables';
+import MenuBar from '../MenuBar';
 
 import './style.scss';
 
@@ -10,7 +11,7 @@ class Main extends Component {
     super(props);
     this.state = {
       startDate: moment(new Date()),
-      finishDate: moment(new Date()).add(5,'h'),
+      finishDate: moment(new Date()).add(33,'h'),
       interval: 30,
     };
 
@@ -29,7 +30,7 @@ class Main extends Component {
     // let TimeLine = [];
 
     const rows1 = [
-      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.startDate.format('kk:mm'), ''),
+      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.finishDate.format('kk:mm'), ''),
     ];
 
     const rows2 = [
@@ -42,11 +43,14 @@ class Main extends Component {
   
     return (
       <div className='main'>
+        <MenuBar />
         <div className='joblist'>
         </div>
         <div className='chainList'>
-          <CustomizedTables head={{bgcolor:'#f6b764'}} rows={rows1} idpre='ano'/>
-          <CustomizedTables head={{bgcolor:'#55ee8a'}} rows={rows2} idpre='yos'/>
+          <div>■実際のチェーン</div>
+          <CustomizedTables head={{bgcolor:'#f8bc23'}} rows={rows1} idpre='ano'/>
+          <div>■時間帯別予測のチェーン</div>
+          <CustomizedTables head={{bgcolor:'#19da7c'}} rows={rows2} idpre='yos'/>
         </div>
       </div>
     );

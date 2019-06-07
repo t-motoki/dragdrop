@@ -55,7 +55,7 @@ export default (Props) => {
             <StyledTableCell width='10%'>時間</StyledTableCell>
             <StyledTableCell width='70%'>
               <div>
-                <div>ジョブチェーン</div>
+                <div>アイテム チェーン</div>
                 <div><Meter maxJobTime={1235000}/></div>
               </div>
             </StyledTableCell>
