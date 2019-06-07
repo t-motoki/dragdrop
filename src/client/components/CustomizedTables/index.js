@@ -29,13 +29,13 @@ export default (Props) => {
       color: theme.palette.common.black,
       minHeight:'200px',
       verticalAlign:'top',
-      borderRight:'solid 1px #afafaf',
+      borderLeft:'solid 1px #afafaf',
       fontSize: 16,
     },
     body: {
       fontSize: 18,
       height:'70px',
-      borderRight:'solid 1px #afafaf',
+      borderLeft:'solid 1px #afafaf',
     },
   }))(TableCell);
   
