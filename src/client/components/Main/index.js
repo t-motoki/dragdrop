@@ -65,10 +65,10 @@ class Main extends Component {
         </div>
         <div className='chainList'>
           <div>■実際のチェーン</div>
-          <CustomizedTables head={{bgcolor:'#f8bc23'}} rows={rows1} idpre='ano'/>
+          <CustomizedTables head={{bgcolor:'gold'}} rows={rows1} idpre='ano'/>
           <br /><br />
           <div>■時間帯別予測のチェーン</div>
-          <CustomizedTables head={{bgcolor:'#19da7c'}} rows={rows2} idpre='yos'/>
+          <CustomizedTables head={{bgcolor:'palegreen'}} rows={rows2} idpre='yos'/>
         </div>
       </div>
     );
