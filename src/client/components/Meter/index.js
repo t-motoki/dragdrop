@@ -16,6 +16,15 @@ export default (Props) => {
     divisionTime = maxJobTime;
   }
 
+  let unit = 'ms';
+  if(String(divisionTime).length > 4){
+    unit = 's';
+    remainder += (divisionTime % 1000) * divisionNum;
+    divisionTime = Math.floor(divisionTime / 1000);
+    remainder = Math.floor(remainder / 1000);
+  }
+
+
   let total = 0;
   let data = [];
   for (let i = 0; i < divisionNum; i++) {
@@ -23,7 +32,7 @@ export default (Props) => {
     if (i === divisionNum - 1) {
       total += remainder;
     }
-    data.push(total+'ms');
+    data.push(total+unit);
   }
 
   return (

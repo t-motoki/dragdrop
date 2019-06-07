@@ -38,15 +38,23 @@ class Main extends Component {
     // let TimeLine = [];
 
     const rows1 = [
-      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.finishDate.format('kk:mm'), <ItemChain/>),
+      this.createData(this.state.finishDate.format('YYYY/MM/DD '), this.state.finishDate.format('HH:mm'), <ItemChain/>),
     ];
 
     const rows2 = [
-      this.createData(this.state.startDate.format('YYYY/MM/DD '), this.state.startDate.format('kk:mm'), <ItemChain/>),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
-      this.createData('', this.state.startDate.add(30,'m').format('kk:mm'), <ItemChain/>),
+      this.createData(this.state.startDate.format('YYYY/MM/DD '), this.state.startDate.format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
+      this.createData('', this.state.startDate.add(30,'m').format('HH:mm'), <ItemChain/>),
     ];
   
     return (
@@ -58,6 +66,7 @@ class Main extends Component {
         <div className='chainList'>
           <div>■実際のチェーン</div>
           <CustomizedTables head={{bgcolor:'#f8bc23'}} rows={rows1} idpre='ano'/>
+          <br /><br />
           <div>■時間帯別予測のチェーン</div>
           <CustomizedTables head={{bgcolor:'#19da7c'}} rows={rows2} idpre='yos'/>
         </div>
