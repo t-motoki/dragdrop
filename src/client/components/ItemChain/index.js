@@ -3,13 +3,16 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 export default (Props) => {
 
-  const getItemStyle = (isDragging, draggableStyle) => ({
+  const getItemStyle = (isDragging, draggableStyle, width) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: 'none',
     padding: 8,
     margin: `0 0 0 0`,
     border: `solid 1px #777`,
-  
+
+    // 疑似的に100～200に幅を変動させる
+    width:`${width}%`,
+
     // change background colour if dragging
     background: isDragging ? 'aquamarine' : 'aliceblue',
   
@@ -41,7 +44,8 @@ export default (Props) => {
                     {...provided.dragHandleProps}
                     style={getItemStyle(
                       snapshot.isDragging,
-                      provided.draggableProps.style
+                      provided.draggableProps.style,
+                      Math.floor( Math.random() * 21 )+10
                     )}
                   >
                     {item.content}

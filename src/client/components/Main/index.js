@@ -39,17 +39,13 @@ const move = (source, destination, droppableSource, droppableDestination, copy=f
   ? JSON.parse(JSON.stringify(sourceClone.slice(droppableSource.index, droppableSource.index+1)))
   : sourceClone.splice(droppableSource.index, 1);
 
-  console.log(sourceClone);
   if(copy){
     itemCount++;
     console.log(itemCount);
     removed.id = 'item-'+ (itemCount-1);
   }
-  console.log(removed);
 
   destClone.splice(droppableDestination.index, 0, removed);
-  console.log(destClone);
-
   result[droppableSource.droppableId] = sourceClone;
   result[droppableDestination.droppableId] = destClone;
 
@@ -121,9 +117,8 @@ class Main extends Component {
               source,
               destination,
               source.droppableId === 'droppable1',
-              destination.droppableId === 'droppable1',
+              destination.droppableId === 'droppable1' || destination.droppableId === 'droppable3',
           );
-          console.log(result);
           this.setState({
             itemlist: result.droppable1,
             rjbChain: result.droppable2
