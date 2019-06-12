@@ -90,7 +90,7 @@ function FullScreenDialog() {
                     <option value='14:12:33.234'>14:12:33.234</option>
                   </select>
                 </span>
-                に行った。
+                に実行した。
               </span>
             } />
           </ListItem>
@@ -137,7 +137,7 @@ function FullScreenDialog() {
               </span>
               までを
               <span className="cp_ipselect cp_sl01">
-                <select name="感覚" onChange={(e)=>console.log(e.target.value)} required>
+                <select name="間隔" onChange={(e)=>console.log(e.target.value)} required>
                   <option value='30'>30</option>
                   <option value='60'>60</option>
                   <option value='120'>120</option>
