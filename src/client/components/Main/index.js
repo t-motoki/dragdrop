@@ -78,7 +78,9 @@ class Main extends Component {
     return (
       <div className='main'>
         <MenuBar />
-        <SnackbarProvider maxSnack={1} anchorOrigin={{vertical: 'top', horizontal: 'right',}}>
+        <SnackbarProvider maxSnack={1} autoHideDuration={2000}
+          anchorOrigin={{vertical: 'top', horizontal: 'right',}}
+        >
           <MovingArea rows1={rows1} rows2={rows2} itemlist={this.state.itemlist} onDragEnd={this.onDragEnd}/>
         </SnackbarProvider>
       </div>
