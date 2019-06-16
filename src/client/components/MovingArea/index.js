@@ -5,6 +5,8 @@ import { useSnackbar } from 'notistack';
 import ItemList from '../ItemList';
 import CustomizedTables from '../CustomizedTables';
 
+import TrashBox from '../TrashBox';
+
 export default (Props) => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -13,6 +15,12 @@ export default (Props) => {
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
 
+    return result;
+  };
+
+  const deleteItem = (list, startIndex) => {
+    const result = Array.from(list);
+    result.splice(startIndex, 1);
     return result;
   };
 
@@ -59,14 +67,29 @@ export default (Props) => {
         source.index,
         destination.index
       );
-    } else {
 
-      // 移動(コピー)してはいけない場所はそのまま返す
-      if (destination.droppableId === 'order' || destination.droppableId === 'rjbChain') {
-        enqueueSnackbar('ここに移動はできません。', { variant: 'error' });
+    } else if (destination.droppableId === 'trashBox') {
+
+      if(source.droppableId !== 'order'){
+        // 削除
+        state[source.droppableId] = deleteItem(
+          state[source.droppableId],
+          source.index
+        );
+        enqueueSnackbar(`削除しました。`);
+      }else{
+        enqueueSnackbar('これは削除できません。', { variant: 'error' });
         return;
       }
 
+    } else {
+      // 移動(コピー)してはいけない場所はそのまま返す
+      if (destination.droppableId === 'order' || destination.droppableId === 'rjbChain') {
+        if(source.droppableId !== 'order'){
+          enqueueSnackbar('ここに移動はできません。', { variant: 'error' });
+          return;
+        }
+      }
       // 別の場所へ移動(コピー)できない
       if (source.droppableId === 'rjbChain') {
         enqueueSnackbar('ここからは、別の場所へ移動することができません。', { variant: 'error' });
@@ -95,6 +118,7 @@ export default (Props) => {
         <ItemList droppableId={'order'} items={Props.itemlist.order} />
       </div>
       <div className='chainList'>
+        <TrashBox droppableId={'trashBox'} />
         <div>■実際のチェーン</div>
         <CustomizedTables head={{ bgcolor: 'gold' }} rows={Props.rows1} idpre='ano' />
         <br /><br />
